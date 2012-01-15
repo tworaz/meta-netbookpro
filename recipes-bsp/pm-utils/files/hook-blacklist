@@ -1,0 +1,1 @@
+HOOK_BLACKLIST="98video-quirk-db-handler 99video"
