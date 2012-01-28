@@ -4,11 +4,11 @@ LICENSE = "GPLv2"
 
 DEPENDS="boost-img-native boost-bootcode"
 
-SRC_URI = "git://github.com/tworaz/linux.git;protocol=git;branch=v3.2.1-nbpro0"
-SRCREV="0022d80e097f73b42e59a2575f6afd23d22a085e"
+PV = "3.2.2"
+PR = "r0"
 
-PV = "3.2.1"
-PR = "r1"
+SRC_URI = "git://github.com/tworaz/linux.git;protocol=git;branch=v${PV}-nbpro"
+SRCREV = "2c471b17301a4f5e4519df28dfac1329ce3642b5"
 
 ARCH = "arm"
 COMPATIBLE_HOST = "arm.*-linux"
