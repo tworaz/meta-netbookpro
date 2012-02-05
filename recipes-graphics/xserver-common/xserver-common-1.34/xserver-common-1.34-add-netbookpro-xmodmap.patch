@@ -1,0 +1,45 @@
+diff -auNr xserver-common-1.34.orig/X11/Xinit.d/12keymap xserver-common-1.34/X11/Xinit.d/12keymap
+--- xserver-common-1.34.orig/X11/Xinit.d/12keymap	2012-02-04 19:58:08.100318900 +0100
++++ xserver-common-1.34/X11/Xinit.d/12keymap	2012-02-04 20:06:57.704660873 +0100
+@@ -24,6 +24,9 @@
+ 	"ti-osk")
+ 		xmodmap - < /etc/X11/xmodmap/omap5912osk.xmodmap
+ 		;;
++        "psion_teklogix_netbook_pro")
++		xmodmap - < /etc/X11/xmodmap/netbookpro.xmodmap
++		;;
+ 	# All the rest of keyboardless PDA machines use common buttonmap
+ 	"simpad" | "hp_ipaq"* | "asus_mypal"*)
+ 		xmodmap - < /etc/X11/xmodmap/keyboardless.xmodmap
+diff -auNr xserver-common-1.34.orig/X11/xmodmap/netbookpro.xmodmap xserver-common-1.34/X11/xmodmap/netbookpro.xmodmap
+--- xserver-common-1.34.orig/X11/xmodmap/netbookpro.xmodmap	1970-01-01 01:00:00.000000000 +0100
++++ xserver-common-1.34/X11/xmodmap/netbookpro.xmodmap	2012-02-04 20:07:08.039530945 +0100
+@@ -0,0 +1,28 @@
++!
++! This is an `xmodmap' input file for Psion Netbook Pro keyboards.
++
++clear mod3
++clear mod4
++
++keycode 11  =	2		at		quotedbl
++keycode 12  =	3		numbersign	sterling
++keycode 13  =	4		dollar		EuroSign
++keycode 14  =	5		percent         grave
++keycode 15  =	6		asciicircum	acute
++keycode 16  =	7		ampersand	braceleft
++keycode 17  =	8		asterisk	braceright
++keycode 18  =	9		parenleft	bracketleft
++keycode 19  =	0		parenright	bracketright
++keycode 20  =	minus		underscore	numbersign
++keycode 48  =	apostrophe	quotedbl	at
++keycode 51  =	backslash	asciitilde	bar
++keycode 105 =	VoidSymbol
++keycode 108 =	NoSymbol
++keycode 110 =	Home
++keycode 112 =	Page_Up
++keycode 115 =	End
++keycode 117 =	Page_Down
++keycode 133 =	Mode_switch
++keycode 146 =	F1
++
++add mod3 = Mode_switch

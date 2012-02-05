@@ -1,0 +1,26 @@
+--- xserver-common-1.34.orig/X11/xmodmap/default.xmodmap	2012-02-04 19:58:08.099318913 +0100
++++ xserver-common-1.34/X11/xmodmap/default.xmodmap	2012-02-04 19:58:40.022917579 +0100
+@@ -1,3 +1,11 @@
++clear control
++clear shift
++clear lock
++clear mod1
++clear mod2
++clear mod3
++clear mod4
++
+ keycode   9 = Escape
+ keycode  10 = 1 exclam
+ keycode  11 = 2 at
+@@ -107,9 +115,11 @@
+ keycode 125 = F17
+ keycode 126 = KP_Subtract
+ keycode 127 = Pause
++keycode 133 = NoSymbol
+ keycode 198 = Up
+ keycode 200 = Left
+ keycode 201 = Right
++keycode 203 = NoSymbol
+ keycode 204 = Down
+
+ add shift = Shift_L
