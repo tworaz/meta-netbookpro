@@ -4,11 +4,11 @@ LICENSE = "GPLv2"
 
 DEPENDS="boost-img-native boost-bootcode"
 
-PV = "3.2.2"
-PR = "r2"
+PV = "3.2.3"
+PR = "r1"
 
 SRC_URI = "git://github.com/tworaz/linux.git;protocol=git;branch=v${PV}-nbpro"
-SRCREV = "abd89da2b04da16259c1920f35395c784c42df0f"
+SRCREV = "4c1ae84583093dfdea411eed495d359df60ca45e"
 
 ARCH = "arm"
 COMPATIBLE_HOST = "arm.*-linux"
@@ -48,8 +48,34 @@ kernel_do_deploy_append() {
 	install -m 0644 ${S}/${NBKPRO_IMG_NAME} ${DEPLOYDIR}/${NBKPRO_IMG_NAME}_${KERNEL_VERSION}
 }
 
-pkg_postinst_kernel-base () {
+pkg_preinst_kernel-image () {
+if test "x$D" != "x"; then
+    exit 0
+else
+    grep -q "/boot" /etc/mtab || mount /boot
+fi
 }
 
-pkg_postrm_kernel-base () {
+pkg_postinst_kernel-image () {
+if test "x$D" != "x"; then
+    exit 0
+else
+    grep -q "/boot" /etc/mtab && umount /boot
+fi
+}
+
+pkg_prerm_kernel-image () {
+if test "x$D" != "x"; then
+    exit 0
+else
+    grep -q "/boot" /etc/mtab || mount /boot
+fi
+}
+
+pkg_postrm_kernel-image () {
+if test "x$D" != "x"; then
+    exit 0
+else
+    grep -q "/boot" /etc/mtab && umount /boot
+fi
 }
