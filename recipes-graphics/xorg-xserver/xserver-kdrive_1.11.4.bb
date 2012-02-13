@@ -4,9 +4,9 @@ DEPENDS += "libxkbfile libxcalibrate font-util pixman"
 
 RDEPENDS_${PN} += "xkeyboard-config"
 
-PR = "r0"
+PR = "r1"
 
-SRCREV = "944e1e0209bc1b366ce80a670c1f9fa044e80571"
+SRCREV = "8c69784d1aa14450bf85776ecef5faf5c95d7064"
 SRC_URI = "git://github.com/tworaz/xserver.git;protocol=git;branch=xepson-${PV} \
     file://crosscompile.patch \
     file://fix_open_max_preprocessor_error.patch \
